@@ -23,7 +23,7 @@ for div in divs:
     urlList = div.find('a').get('href').replace('/url?q=', '').split("&sa")
     url = urlList[0]
     urlLower = urlList[0].lower()
-    if 'sinova' in urlLower and ('.co' in urlLower or 'co.linkedin' in urlLower):
+    if 'sinova.co' in urlLower or (('co.linkedin' in urlLower) and ('/sinova' in urlLower)):
         pagina = 1
         print("Página: "+str(pagina),"URL:"+urlList[0])
         encontrado = True
@@ -47,7 +47,7 @@ if not encontrado:
                 urlList1 = div1.find('a').get('href').replace('/url?q=', '').split("&sa")
                 url1 = urlList1[0]
                 urlLower1 = urlList1[0].lower()
-                if 'sinova' in urlLower1 and ('.co' in urlLower1 or 'co.linkedin' in urlLower1):
+                if 'sinova.co' in urlLower1 or (('co.linkedin' in urlLower1) and ('/sinova' in urlLower1)):
                     pagina = cont
                     print("Página: "+str(pagina),"URL:"+urlList1[0], "N° Rtas:",len(divs1))
                     encontrado = True
